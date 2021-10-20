@@ -1,48 +1,71 @@
-body {
-	color: #737173;
-}
-
 body,
 html {
 	height: 100%;
 	margin: 0;
 }
 
-header {
-	width: 100%;
-	max-height: 18rem;
+body {
+	color: $c-black;
 }
 
-aside {
-	background-color: #cdfefe;
-	color: #7c2548;
-	width: fit-content;
+header {
+	width: 100%;
+	height: auto;
+}
+
+.asidenav {
+	background-color: $c-aqua;
+	color: $c-crimson !important;
 	padding: 1rem;
+	height: 100%;
 
-	> ul {
-		list-style: none;
+	ol {
+		&.wrapped {
+			padding-left: 1rem;
+		}
+		&.dropdown-menu {
+			list-style-type: decimal;
+		}
 	}
 
-	ol.wrapped {
-		padding-left: 1rem;
+	ul {
+		&.wrapped {
+			padding-left: 1.3rem;
+		}
+	}
+}
+
+.wrapped {
+	padding-top: 1rem;
+	padding-bottom: 1.5rem;
+	position: inherit !important;
+	transform: none !important;
+
+	li {
+		&:hover {
+			color: $c-blue;
+		}
 	}
 
-	ul.wrapped {
-		padding-left: 1.3rem;
-	}
-
-	.wrapped {
-		padding-top: 1rem;
-		padding-bottom: 1.5rem;
+	a {
+		text-decoration: none;
+		color: inherit;
 	}
 }
 
 .navbar-title {
-	color: #ffa500;
+	color: $c-orange;
+}
+
+.navbar-toggler {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
 }
 
 .order {
-	color: #1375f2;
+	color: $c-blue;
+	padding-bottom: 1.5rem;
 }
 
 .content {
@@ -66,7 +89,7 @@ aside {
 }
 
 .details {
-	background: #e8e6fb;
+	background: $c-details;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	margin-bottom: 1rem;
@@ -74,4 +97,64 @@ aside {
 
 .poster {
 	width: 100%;
+}
+
+.subnav {
+	position: relative;
+	width: 100%;
+	padding-bottom: 0.5rem;
+}
+
+.nav-link {
+	color: inherit;
+	padding: 0;
+}
+
+.dropdown-menu {
+	color: inherit;
+	list-style: initial;
+	border: none;
+	background-color: inherit;
+}
+
+@media (min-width: 992px) {
+	.dropdown-menu {
+		list-style: initial;
+		display: block;
+	}
+
+	.dropdown-toggle {
+		pointer-events: none;
+
+		&:after {
+			display: none;
+		}
+		&:hover {
+			cursor: auto;
+			color: inherit;
+		}
+	}
+
+	.asidenav {
+		display: block !important;
+	}
+}
+
+@media (max-width: 992px) {
+	.wrapper {
+		flex-direction: column;
+	}
+
+	.order {
+		padding-bottom: 0;
+	}
+
+	.wrapped {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+
+	.asidenav {
+		padding: 0.5rem 1rem;
+	}
 }
