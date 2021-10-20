@@ -1,3 +1,5 @@
+@import 'vars';
+
 body,
 html {
 	height: 100%;
@@ -141,6 +143,10 @@ header {
 }
 
 @media (max-width: 992px) {
+	.brand {
+		display: none;
+	}
+
 	.wrapper {
 		flex-direction: column;
 	}
@@ -156,5 +162,16 @@ header {
 
 	.asidenav {
 		padding: 0.5rem 1rem;
+	}
+}
+
+@media (max-width: 576px) {
+	header {
+		display: none;
+	}
+
+	.content {
+		grid-template-columns: 1fr;
+		padding: 0 1rem;
 	}
 }

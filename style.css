@@ -130,6 +130,10 @@ header {
   }
 }
 @media (max-width: 992px) {
+  .brand {
+    display: none;
+  }
+
   .wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -148,5 +152,16 @@ header {
 
   .asidenav {
     padding: 0.5rem 1rem;
+  }
+}
+@media (max-width: 576px) {
+  header {
+    display: none;
+  }
+
+  .content {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
   }
 }
