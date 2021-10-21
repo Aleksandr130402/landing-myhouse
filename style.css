@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
 body,
 html {
   height: 100%;
@@ -5,7 +17,11 @@ html {
 }
 
 body {
-  color: #737173;
+  color: #848284;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 header {
@@ -13,11 +29,18 @@ header {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+}
+
 .asidenav {
   background-color: #cdfefe;
   color: #7c2548 !important;
   padding: 1rem;
-  height: 100%;
 }
 .asidenav ol.wrapped {
   padding-left: 1rem;
@@ -30,22 +53,26 @@ header {
 }
 
 .wrapped {
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1em;
+  padding-bottom: 1.5em;
   position: inherit !important;
   -webkit-transform: none !important;
           transform: none !important;
+  font-size: 1em;
+  font-weight: 400;
 }
 .wrapped li:hover {
   color: #1375f2;
 }
-.wrapped a {
-  text-decoration: none;
-  color: inherit;
-}
 
 .navbar-title {
   color: #ffa500;
+}
+.navbar-title a {
+  font-size: 1.7rem;
+}
+.navbar-title span:last-child {
+  font-size: 1.5rem;
 }
 
 .navbar-toggler {
@@ -73,6 +100,11 @@ header {
   border: none;
 }
 
+.card-title {
+  color: #000;
+  font-weight: bold;
+}
+
 .card-img-top {
   display: block;
   padding-left: 1.5rem;
@@ -84,6 +116,9 @@ header {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+}
+.details strong {
+  color: #000;
 }
 
 .poster {
@@ -108,10 +143,43 @@ header {
   background-color: inherit;
 }
 
+.brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 1.2rem;
+}
+
+.content-title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #07196a;
+}
+
+.content-title-about {
+  color: #807b9a;
+}
+
+.brand-mobile {
+  line-height: initial;
+  padding-top: 0.5rem;
+}
+
 @media (min-width: 992px) {
+  aside {
+    margin-left: -0.75rem;
+  }
+
   .dropdown-menu {
     list-style: initial;
     display: block;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
   }
 
   .dropdown-toggle {
@@ -127,6 +195,19 @@ header {
 
   .asidenav {
     display: block !important;
+    height: 100%;
+  }
+
+  .navbar-title span:last-child {
+    font-size: 1.2rem;
+  }
+
+  .bd-layout {
+    display: -ms-grid;
+    display: grid;
+    gap: 12px;
+    -ms-grid-columns: 1fr 12px 5fr;
+    grid-template-columns: 1fr 5fr;
   }
 }
 @media (max-width: 992px) {
@@ -152,6 +233,7 @@ header {
 
   .asidenav {
     padding: 0.5rem 1rem;
+    margin: 0 -0.75rem;
   }
 }
 @media (max-width: 576px) {

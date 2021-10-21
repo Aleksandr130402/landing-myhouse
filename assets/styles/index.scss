@@ -7,7 +7,11 @@ html {
 }
 
 body {
-	color: $c-black;
+	color: $c-black-1;
+	font-family: $f-main;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
 }
 
 header {
@@ -15,11 +19,19 @@ header {
 	height: auto;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		color: inherit;
+	}
+}
+
 .asidenav {
 	background-color: $c-aqua;
 	color: $c-crimson !important;
 	padding: 1rem;
-	height: 100%;
 
 	ol {
 		&.wrapped {
@@ -38,25 +50,31 @@ header {
 }
 
 .wrapped {
-	padding-top: 1rem;
-	padding-bottom: 1.5rem;
+	padding-top: 1em;
+	padding-bottom: 1.5em;
 	position: inherit !important;
 	transform: none !important;
+	font-size: 1em;
+	font-weight: 400;
 
 	li {
 		&:hover {
 			color: $c-blue;
 		}
 	}
-
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
 }
 
 .navbar-title {
 	color: $c-orange;
+
+	a {
+		font-size: 1.7rem;
+	}
+	span {
+		&:last-child {
+			font-size: 1.5rem;
+		}
+	}
 }
 
 .navbar-toggler {
@@ -84,6 +102,11 @@ header {
 	border: none;
 }
 
+.card-title {
+	color: $c-black;
+	font-weight: bold;
+}
+
 .card-img-top {
 	display: block;
 	padding-left: 1.5rem;
@@ -95,6 +118,10 @@ header {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	margin-bottom: 1rem;
+
+	strong {
+		color: $c-black;
+	}
 }
 
 .poster {
@@ -119,10 +146,38 @@ header {
 	background-color: inherit;
 }
 
-@media (min-width: 992px) {
+.brand {
+	display: flex;
+	justify-content: space-between;
+	line-height: 1.2rem;
+}
+
+.content-title {
+	font-size: 1.7rem;
+	font-weight: bold;
+	color: $c-blue-1;
+}
+
+.content-title-about {
+	color: $c-grey;
+}
+
+.brand-mobile {
+	line-height: initial;
+	padding-top: 0.5rem;
+}
+
+@media (min-width: $md) {
+	aside {
+		margin-left: -0.75rem;
+	}
 	.dropdown-menu {
 		list-style: initial;
 		display: block;
+	}
+
+	.navbar-brand {
+		margin-right: 0;
 	}
 
 	.dropdown-toggle {
@@ -139,10 +194,25 @@ header {
 
 	.asidenav {
 		display: block !important;
+		height: 100%;
+	}
+
+	.navbar-title {
+		span {
+			&:last-child {
+				font-size: 1.2rem;
+			}
+		}
+	}
+
+	.bd-layout {
+		display: grid;
+		gap: 12px;
+		grid-template-columns: 1fr 5fr;
 	}
 }
 
-@media (max-width: 992px) {
+@media (max-width: $md) {
 	.brand {
 		display: none;
 	}
@@ -162,10 +232,11 @@ header {
 
 	.asidenav {
 		padding: 0.5rem 1rem;
+		margin: 0 -0.75rem;
 	}
 }
 
-@media (max-width: 576px) {
+@media (max-width: $xs) {
 	header {
 		display: none;
 	}
